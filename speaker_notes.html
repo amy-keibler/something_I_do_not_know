@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>speaker_notes.html</title>
+
+</head>
+
+<body>
+
+<h1>Property Testing</h1>
+
+<ul>
+<li>A bit off of the beaten path</li>
+<li>specific use cases</li>
+<li>tool in a tool-belt</li>
+<li>Quickcheck for Haskell is the most well known</li>
+<li>Properties of code that can be defined</li>
+<li>example: reverse has a property -> length of a reversed string does not change</li>
+<li>Useful for FP because pure functions map inputs to an output</li>
+<li>no internal state to make testing complex</li>
+</ul>
+
+<h1>Where Is It Useful?</h1>
+
+<ul>
+<li>functions with potential edge cases</li>
+<li>off by one errors</li>
+<li>missed boundaries</li>
+<li>validation of performance for algorithms</li>
+<li>correctness of a sort algorithm</li>
+<li>square root, logarithm, etc.</li>
+<li>not useful for cases where inputs are equally valid</li>
+<li>example: test that takes a username and retrieves the user from a database</li>
+<li>runs 100 generated usernames, where a single test with a factory would do</li>
+</ul>
+
+<h1>Elixir Libraries</h1>
+
+<ul>
+<li>Quixir and ExCheck are two property testing libraries</li>
+<li>Quixir -> Prag Dave</li>
+<li>ExCheck -> based on Erlang library "triq"</li>
+<li>generators define the constraints on the inputs</li>
+<li>example: ints, positive ints, custom structs</li>
+<li>macros make writing tests easier</li>
+<li>output so you don't have 99 pass and 1 fail</li>
+<li>attempts to find smallest failure case</li>
+</ul>
+
+<h1>Complex Number Example</h1>
+
+<ul>
+<li>simple, contrived example</li>
+<li>complex numbers refresher</li>
+<li>real and imaginary components</li>
+<li>sqrt(-1) = i</li>
+<li>multiplication -> foil method</li>
+</ul>
+
+<h1>Potential Test Cases</h1>
+
+<ul>
+<li>zeros</li>
+<li>reals</li>
+<li>imaginary numbers</li>
+<li>real times imaginary</li>
+<li>imaginary times real</li>
+<li>negative numbers, etc</li>
+</ul>
+
+<h1>Property Test</h1>
+
+<ul>
+<li>relevant property -> squaring i -> negative one</li>
+<li>everything else is algebraic simplification</li>
+<li>next slide</li>
+<li>had a bit of trouble making it play nice with structs, but it <em>should</em> work</li>
+<li>basic idea still holds true</li>
+<li>generate four numbers of any value</li>
+<li>assert that multiplication is a complex value where our i^2 = -1 value holds</li>
+<li>very contrived, only a minor difference between test and actual implementation</li>
+<li>I've used it to verify the behavior of the mandelbrot set algorithm</li>
+</ul>
+
+<h1>References</h1>
+
+</body>
+</html>
